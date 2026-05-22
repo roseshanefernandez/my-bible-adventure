@@ -70,7 +70,6 @@ interface CartoonSceneProps {
   childName: string;
 }
 
-
 // Renders the static cartoonized webp images from your /public/images folder
 const CartoonScene = ({ type, childName }: CartoonSceneProps) => {
   if (!type) {
@@ -106,7 +105,9 @@ const CartoonScene = ({ type, childName }: CartoonSceneProps) => {
 export default function MyBibleAdventure() {
   const [childName, setChildName] = useState("");
   const [childPronoun, setChildPronoun] = useState("he");
-  const [selectedStory, setSelectedStory] = useState("");
+  const [selectedStory, setSelectedStory] = useState<keyof typeof STORIES | "">(
+    "",
+  );
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showStory, setShowStory] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -289,7 +290,7 @@ export default function MyBibleAdventure() {
         {/* Picture book style frame */}
         <div className="mb-6">
           <CartoonScene
-            type={currentSlideData?.cartoon}
+            type={currentSlideData?.cartoon ?? ""}
             childName={childName}
           />
         </div>
@@ -452,7 +453,7 @@ export default function MyBibleAdventure() {
             </label>
             <select
               value={selectedStory}
-              onChange={(e) => setSelectedStory(e.target.value)}
+              onChange={(e) => setSelectedStory(e.target.value as keyof typeof STORIES | "")}
               className="w-full px-6 py-4 text-lg rounded-xl border-4 border-purple-300 bg-white text-gray-800 focus:outline-none focus:border-purple-600 font-semibold"
             >
               <option value="">-- Choose a story --</option>
