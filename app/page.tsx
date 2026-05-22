@@ -304,7 +304,11 @@ export default function MyBibleAdventure() {
       <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-yellow-100 p-4 sm:p-6 md:p-8">
         {/* Picture book style frame */}
         <div className="mb-4 sm:mb-6">
-          <CartoonScene type={currentSlideData?.cartoon} childName={childName} />
+          <CartoonScene 
+		  type={currentSlideData?.cartoon ?? "default"} 
+		  childName={childName} 
+		/>
+
         </div>
 
         {/* Story text */}
