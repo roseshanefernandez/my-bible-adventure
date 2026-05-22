@@ -24,7 +24,7 @@ export const viewport: Viewport = {
   userScalable: true,
   
   // Support for notched phones (iPhone X, 12, 13, 14, 15, etc.)
-  viewportFitCover: true,
+  viewportFit: "cover", // <-- FIX: Changed key and string value here
   
   // Color scheme preference
   colorScheme: "light dark",
