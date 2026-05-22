@@ -65,8 +65,14 @@ const STORIES = {
   },
 };
 
+interface CartoonSceneProps {
+  type: string;
+  childName: string;
+}
+
+
 // Renders the static cartoonized webp images from your /public/images folder
-const CartoonScene = ({ type, childName }) => {
+const CartoonScene = ({ type, childName }: CartoonSceneProps) => {
   if (!type) {
     return (
       <div className="w-full aspect-[4/3] bg-purple-100 rounded-2xl flex items-center justify-center border-4 border-dashed border-purple-300">
