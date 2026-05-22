@@ -5,7 +5,8 @@ import { ChevronRight, ChevronLeft, Volume2 } from "lucide-react";
 // Put this outside your component or near the top
 const BACKGROUND_TRACKS = [
   { name: "Animals", url: "/audio/animals.mp3" },
-  { name: "Enjoy", url: "/audio/enjoy.mp3" }, // Replace with your public domain hymn URLs
+  { name: "Enjoy", url: "/audio/enjoy.mp3" },
+  { name: "Kitty", url: "/audio/kitty.mp3" },
   { name: "Storybook", url: "/audio/storybook.mp3" },
 ];
 
@@ -63,6 +64,58 @@ const STORIES = {
       },
     ],
   },
+  'daniel-lions': {
+    title: 'Daniel & the Lions',
+    lesson: 'Prayer & Protection',
+    slides: [
+      {
+        text: "Daniel was a kind man who loved God so much. He prayed three times every day, and [CHILD_NAME] loved his faithful heart!",
+        cartoon: 'dl-1'
+      },
+      {
+        text: "A mean king made a rule that nobody could pray. But Daniel kept praying because he loved God most of all.",
+        cartoon: 'dl-2'
+      },
+      {
+        text: "Guards caught Daniel and put him in a pit with big, hungry lions! [CHILD_NAME]'s heart beat fast. Would Daniel be okay?",
+        cartoon: 'dl-3'
+      },
+      {
+        text: "But Daniel prayed, and God sent angels to keep the lions calm and gentle. They didn't hurt Daniel at all!",
+        cartoon: 'dl-4'
+      },
+      {
+        text: "The king let Daniel out, so happy and safe! [CHILD_NAME] learned that God protects those who love and trust Him.",
+        cartoon: 'dl-5'
+      }
+    ]
+  },
+  'esther-courage': {
+    title: "Queen Esther's Courage",
+    lesson: "Bravery for Others",
+    slides: [
+      {
+        text: "Esther was a beautiful, brave queen who loved her people. [CHILD_NAME] admired how she cared about everyone!",
+        cartoon: 'ec-1'
+      },
+      {
+        text: "A mean man wanted to hurt Esther's people. Esther was scared, but she knew she had to be brave and ask the king for help.",
+        cartoon: 'ec-2'
+      },
+      {
+        text: "Esther put on her prettiest dress and took a deep breath. She walked into the king's room, even though she was nervous!",
+        cartoon: 'ec-3'
+      },
+      {
+        text: "The king was so happy to see Queen Esther! She bravely told him about the mean man's bad plan.",
+        cartoon: 'ec-4'
+      },
+      {
+        text: "The king saved Esther's people! [CHILD_NAME] learned that being brave for others is the best kind of courage.",
+        cartoon: 'ec-5'
+      }
+    ]
+  },
 };
 
 interface CartoonSceneProps {
@@ -112,7 +165,7 @@ export default function MyBibleAdventure() {
   const [showStory, setShowStory] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
-  const [currentTrackIndex, setCurrentTrackIndex] = useState(1);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(2);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
 
